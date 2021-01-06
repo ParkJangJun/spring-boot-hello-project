@@ -35,8 +35,8 @@
 
 
 #### 2. 기능 :
-+ spring boot MVC게시판 CRUD
-- dlgk
+1. spring boot MVC게시판 CRUD
+2. dlgk
 
 
 
