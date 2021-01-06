@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.helloproject.mapper.BoardMapper">
+	<select id="now" resultType="string">
+		SELECT NOW() FROM DUAL;
+	</select>	
+		
+	<!-- <select id="memberLogin" resultType="MemberVO">
+		SELECT memberId, memberPass
+		FROM hello_member
+		WHERE memberId = #{memberId}
+		AND memberPass = #{memberPass}
+	</select> -->
+	
+	<select id="userCheck" resultType="MemberVO">
+		SELECT memberId, memberPass
+		FROM hello_member
+		WHERE memberId = #{memberId}
+	</select>
+	
+	<insert id="kakaoLogin" parameterType="HashMap">
+		INSERT IGNORE into kakao_member 
+		VALUES (#{id}, #{name}, #{email})
+	</insert>
+	
+	
+	<select id="idCheck" parameterType="String" resultType="Integer">
+		SELECT count(*)
+		FROM hello_member
+		WHERE memberId = #{memberId}
+	</select>
+
+	<insert id="memberRegister">
+		INSERT into hello_member(memberId, memberPass, memberName)
+		VALUES (#{memberId}, #{memberPass}, #{memberName})
+	</insert>
+	
+	<select id="memberModifyGET" resultType="MemberVO" parameterType="String">
+		SELECT *
+		FROM hello_member
+		WHERE memberId = #{memberId}
+	</select>
+	
+	<update id="memberModifyPOST" parameterType="MemberVO">
+		UPDATE hello_member
+		SET memberPass = #{memberPass}
+		WHERE memberId = #{memberId}
+	</update>
+	
+	<delete id="memberDelete" parameterType="MemberVO">
+		DELETE from hello_member
+		WHERE memberId = #{memberId}
+	</delete>
+	
+	<insert id="boardWrite">
+		INSERT INTO hello_board (title, content, writer)
+		VALUES (#{title}, #{content}, #{writer})
+	</insert>
+
+	<select id="boardList" resultType="hashmap" parameterType="hashmap">
+		<![CDATA[
+			SELECT * 
+			FROM hello_board
+			ORDER BY NUM DESC
+			LIMIT #{pageStart}, #{perPageNum}
+		]]>
+	</select>
+	<select id="boardListCnt" resultType="int">
+		SELECT count(*)
+		FROM hello_board
+	</select>
+	<select id="boardRead" resultType="BoardVO">
+		SELECT num, title, content, writer
+		FROM hello_board
+		WHERE num = #{num}
+	</select>
+	
+	<update id="boardModify" parameterType="com.helloproject.vo.BoardVO">
+		UPDATE hello_board b, hello_member m, kakao_member k
+		SET b.title = #{title},
+			b.content = #{content},
+			b.regdate = now()
+		WHERE num = #{num}
+		and b.writer in (
+			select memberId from hello_member
+			where memberId = #{writer}
+			union
+			select email from kakao_member
+			where email = #{writer}
+		)		
+	</update>
+	
+	<delete id="boardDelete" parameterType="int">
+		DELETE FROM hello_board
+		WHERE num = #{num}
+	</delete> 
+</mapper>
