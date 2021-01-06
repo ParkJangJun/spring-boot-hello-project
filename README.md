@@ -32,7 +32,7 @@
 
 
 ### 2. 기능 :
-1. spring boot MVC게시판 CRUD
+1. MVC게시판/crud
 + 페이징처리한 리스트
 + 글쓰기
 + 글읽기
@@ -49,7 +49,8 @@
 + 카카오멤버 로그인
 
 
-#### 3. controller url 설명
+### 3. controller url 설명
+1. MVC게시판/crud
 
 #### /boardList
 /boardList에서는 오로지 페이징처리에만 집중할 수 있도록 하였다.
@@ -59,16 +60,16 @@
 이런식으로 무조건 세션에서 가지고온 
 멤버상태에 따른 코드를 파라미터로 잡고 화면으로 들어올 수 있게 하였다.
 
-##### /boardWriteForm(get), /boardWrite(post)
+#### /boardWriteForm(get), /boardWrite(post)
 /boardWriteForm는 글쓰기폼 뷰를 리턴한다.
 현재 session이 일반회원인지, 카카오회원인지에 따라 상태값이 달라지며
 제대로 입력하지 않을시 넘어가지 않도록 했고, 
 input type을 hidden으로 지정해서 드러내지 않고 stateCode를 보내도록 하였다.
 
-##### /boardRead
+#### /boardRead
 글번호인 num을 이용하여 해당 글을 보여주도록 함
 
-###### /boardModifyForm(get), /boardModify(post)
+#### /boardModifyForm(get), /boardModify(post)
 글수정시 카카오유저인지 일반유저인지에 따라 
 기본으로 바인딩되는 boardVO의 writer값을 새로 세팅하는 형태로 진행하였다.
 우선 session을 통해 해당 일반멤버, 카카오멤버가 있는지를 확인하고
@@ -76,7 +77,7 @@ input type을 hidden으로 지정해서 드러내지 않고 stateCode를 보내�
 글을쓴 아이디와 맞을 경우 수정이 가능하도록 하였다.
 일반멤버의 아이디와 카카오멤버의 이메일이 같을 경우는 따로 처리하지 않았다.
 
-###### /boardDelete
+#### /boardDelete
 글삭제시 현재 접속한 멤버와 글작성자가 맞는지를 판단하고 
 맞는 경우만 글을 삭제할 수 있도록 처리하였다.
 또한, 편의를 위해 맞을때 ModelAndView를 통해 메시지를 따로 저장하여 
