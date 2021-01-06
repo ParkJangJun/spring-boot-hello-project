@@ -51,7 +51,7 @@
 
 ### 3. controller url 설명
 
-1. MVC게시판/crud
+#### 1. MVC게시판/crud
 
 + /boardList   
 오로지 페이징처리에만 집중할 수 있도록 하였으며, 
@@ -81,7 +81,7 @@ input type을 hidden으로 지정해서 드러내지 않고 stateCode를 보내�
 forward로 boardList로 이동한뒤 메시지에 따라 alert를 띄우게 하였다.
 
 
-2. 회원가입
+#### 2. 회원가입
 + /register(get), /register(post)   
 회원가입을 할때는 두가지 체크를 하는데, 아이디 중복체크와 가입완료시 유효성 체크이다.
 자바스크립트와 ajax 비동기처리를 통해 공백으로 가입할 수 없도록 아이디 공백체크를 하는 부분과
@@ -90,20 +90,20 @@ forward로 boardList로 이동한뒤 메시지에 따라 alert를 띄우게 하�
 또한, BCryptPasswordEncoder 클래스를 이용하여 가입시 사용한 비밀번호를 암호화한다.
 
 
-3. 회원정보수정
+#### 3. 회원정보수정
 + /memberModify(get), /memberModify(post)   
 회원정보수정란에 들어가면 무조건 새비밀번호를 입력하도록 해두었다. 
 그리고 ajax를 이용하여 /memberModify(post)와 비동기 통신으로 처리하였다.
 
 
-4. 회원탈퇴
+#### 4. 회원탈퇴
 + /memberDelete   
 ajax를 이용하여 /memberDelete와 비동기 통신으로 탈퇴처리하였다.
 탈퇴시에는 prompt창을 이용하여 비밀번호를 직접쓰고 탈퇴하도록 유도하고
 컨트롤러에서 @ResponseBody를 이용, 간단히 String을 리턴하여 
 비밀번호가 맞은경우 success를 리턴하여 화면을 처리하였다.
 
-5. 로그인 및 로그아웃
+#### 5. 로그인 및 로그아웃
 + /userCheck   
 + 카카오로그인과 일반 로그인 동시에 처리
 + BCryptPasswordEncoder 클래스를 이용하여 암호화 처리 및 비교
@@ -111,7 +111,7 @@ ajax를 이용하여 /memberDelete와 비동기 통신으로 탈퇴처리하였�
 + 로그인 완료시 게시판으로 이동
 
 
-6. 카카오로그인 및 로그아웃
+#### 6. 카카오로그인 및 로그아웃
 + /userCheck   
 + oauth2 + REST API로 구현한 로그인
 + 인가 코드받기 / 토큰 받기의 2단계 형태로 진행
