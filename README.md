@@ -19,7 +19,7 @@
 ***
 
 
-#### 1. 환경 구성 : 
+### 1. 환경 구성 : 
 + Server OS : Windows 10
 + Spring boot Framework : 2.1.4.RELEASE
 + java version : 1.8
@@ -31,7 +31,7 @@
 + ORM : mybatis 2.1.1
 
 
-#### 2. 기능 :
+### 2. 기능 :
 1. spring boot MVC게시판 CRUD
 + 페이징처리한 리스트
 + 글쓰기
