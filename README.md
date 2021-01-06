@@ -17,7 +17,7 @@
 
 ***
 
-#####1. 환경 구성 : 
+##### 1. 환경 구성 : 
 + Server OS : Windows 10
 + Spring boot Framework : 2.1.4.RELEASE
 + java version : 1.8
