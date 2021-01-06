@@ -41,7 +41,7 @@
 + 카카오멤버 로그인/로그아웃
 
 
-### 3. controller url 설명()
+### 3. controller url 설명(참고)
 
 #### 1. MVC게시판/crud
 
