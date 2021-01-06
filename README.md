@@ -28,7 +28,9 @@
 + ORM : mybatis 2.1.1
 
 2. 기능 :
-[MVC게시판 CRUD]
+
+***
+MVC게시판 CRUD
 
 [리스트]
 ***/boardList
