@@ -17,7 +17,7 @@
 
 ***
 
-##### 1. 환경 구성 : 
+#### 1. 환경 구성 : 
 + Server OS : Windows 10
 + Spring boot Framework : 2.1.4.RELEASE
 + java version : 1.8
@@ -28,10 +28,10 @@
 + DB : MySQL 5.7.22(navicat)
 + ORM : mybatis 2.1.1
 
-##### 2. 기능 :
+#### 2. 기능 :
 + MVC게시판 CRUD
 
-###### /boardList
+##### /boardList
 /boardList에서는 오로지 페이징처리에만 집중할 수 있도록 하였다.
 한번에 10개의 글까지 볼 수 있고, 그 이상이면 넘어가며 
 시작번호, 끝번호, 이전, 다음등이 표시된다.
