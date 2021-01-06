@@ -15,7 +15,9 @@
 *요약 : 스스로 복기하는 의미해서 스프링부트 버젼으로 게시판을 만들었다.
 
 
+
 ***
+
 
 #### 1. 환경 구성 : 
 + Server OS : Windows 10
@@ -28,8 +30,19 @@
 + DB : MySQL 5.7.22(navicat)
 + ORM : mybatis 2.1.1
 
+
+
+
+
 #### 2. 기능 :
-+ MVC게시판 CRUD
++ spring boot MVC게시판 CRUD
+- dlgk
+
+
+
+
+
+
 
 ##### /boardList
 /boardList에서는 오로지 페이징처리에만 집중할 수 있도록 하였다.
