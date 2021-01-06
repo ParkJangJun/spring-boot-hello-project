@@ -50,6 +50,7 @@
 
 
 ### 3. controller url 설명
+
 1. MVC게시판/crud
 
 #### /boardList
@@ -83,4 +84,18 @@ input type을 hidden으로 지정해서 드러내지 않고 stateCode를 보내�
 또한, 편의를 위해 맞을때 ModelAndView를 통해 메시지를 따로 저장하여 
 forward로 boardList로 이동한뒤 메시지에 따라 alert를 띄우게 하였다.
 
+
+2. 로그인
++ /userCheck를 통해 카카오로그인과 일반 로그인 동시에 처리
++ BCryptPasswordEncoder 클래스를 이용하여 암호화 처리 및 비교
++ ModelAndView를 활용하여 리턴값은 하나지만 각각 다르게 이동할 수 있도록 사용하였음
++ 로그인 완료시 게시판으로 이동
+
+3. 카카오로그인
++ oauth2 + REST API로 구현한 로그인
++ 인가 코드받기 / 토큰 받기의 2단계 형태로 진행
++ KakaoAPI라는 서비스를 통해 getAccessToken, getUserInfo, kakaoLogout(토큰받기, 유저정보, 로그아웃)의 3가지 구현체를 만들었다.
++ /userCheck를 통해 카카오로그인과 일반 로그인 동시에 처리(stateCode라는 별로의 코드사용)
++ /boardList 뷰에 진입시, 일반 로그인의 경우와 카카오 로그인의 경우가 다르게 나오도록 
++ 자바스크립트용 로그인창을 띄우는 Kakao.Auth.login()도 포함되어있다.
 
