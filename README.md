@@ -15,4 +15,14 @@
 
 *요약 : 스스로 복기하는 의미해서 스프링부트 버젼으로 게시판을 만들었다.
 
-1. 요약 : 스스로 복기하는 의미해서 스프링부트 버젼으로 게시판을 만들었다.
+1. 환경 구성 : 
++ Server OS : Windows 10
++ Spring boot Framework : 2.1.4.RELEASE
++ java version : 1.8
++ build tool : maven 4.0.0
++ Language : JAVA 1.8
++ WEB Server : Apache 
++ WAS Server : Tomcat 7
++ DB : MySQL 5.7.22(navicat)
++ ORM : mybatis 2.1.1
+
