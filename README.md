@@ -51,7 +51,7 @@
 
 #### 3. controller url 설명
 
-##### /boardList
+#### /boardList
 /boardList에서는 오로지 페이징처리에만 집중할 수 있도록 하였다.
 한번에 10개의 글까지 볼 수 있고, 그 이상이면 넘어가며 
 시작번호, 끝번호, 이전, 다음등이 표시된다.
@@ -59,13 +59,13 @@
 이런식으로 무조건 세션에서 가지고온 
 멤버상태에 따른 코드를 파라미터로 잡고 화면으로 들어올 수 있게 하였다.
 
-###### /boardWriteForm(get), /boardWrite(post)
+##### /boardWriteForm(get), /boardWrite(post)
 /boardWriteForm는 글쓰기폼 뷰를 리턴한다.
 현재 session이 일반회원인지, 카카오회원인지에 따라 상태값이 달라지며
 제대로 입력하지 않을시 넘어가지 않도록 했고, 
 input type을 hidden으로 지정해서 드러내지 않고 stateCode를 보내도록 하였다.
 
-###### /boardRead
+##### /boardRead
 글번호인 num을 이용하여 해당 글을 보여주도록 함
 
 ###### /boardModifyForm(get), /boardModify(post)
