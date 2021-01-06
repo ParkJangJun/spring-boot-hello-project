@@ -53,7 +53,7 @@
 
 1. MVC게시판/crud
 
-+ /boardList
++ /boardList   
 오로지 페이징처리에만 집중할 수 있도록 하였으며, 
 리스트처리는 boardList?stateCode="+stateCode 이런식으로 무조건 
 세션에서 가지고온  멤버상태에 따른 코드를 파라미터로 잡고 화면으로 들어올 수 있게 진행했다.
